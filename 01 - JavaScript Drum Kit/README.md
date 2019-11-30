@@ -17,21 +17,21 @@ window.addEventListener('keydown', playsound);
 ```
 (DOM每個.key標籤).addEventListener('transitionend', removeTransition)；
 ```
-事件B. 音樂結束移除.playing標籤
+事件B. 音樂結束移除.playing標籤:
 1.transitionend事件主要是對應到 CSS 中 transition 的動畫效果，當這個 transition 效果執行結束的時候會引發事件。
-2.removeTransition() 內容為 `e.target.classLiss.remove("playing")`  將對應標籤移除.playing
+2.removeTransition() 內容為 `e.target.classLiss.remove("playing")`  將對應標籤移除.playing。
 
 
 
 ### 學習 ，重新了解
 
-監聽事件addEventListener(event, function)--- 在 function 中代入參數會回傳和該事件有關的物件
-按鍵事件 keydown
-透過 CSS 選擇元素 querySelector, querySelectorAll
-音效相關 element.play( ), element.currentTime 
-資料屬性 data-* attribute
-CSS相關 element.classList.add( ), element.classList.remove( )
-動畫結束事件 --- transitionend
-forEach( )
-若不符合則退出函式：function( ){if(...) return}
+監聽事件addEventListener(event, function)--- 在 function 中代入參數會回傳和該事件有關的物件。
+按鍵事件 keydown。
+透過 CSS 選擇元素 querySelector, querySelectorAll。
+音效相關 element.play( ), element.currentTime 。
+資料屬性 data-* attribute。
+CSS相關 element.classList.add( ), element.classList.remove( )。
+動畫結束事件 --- transitionend。
+forEach( )。
+若不符合則退出函式：function( ){if(...) return}。
 
