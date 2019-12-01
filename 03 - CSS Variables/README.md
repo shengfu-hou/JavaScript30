@@ -1,12 +1,28 @@
-# Update CSS variable with JS
+# Update CSS variable with JS 
+[DEMO](http://htmlpreview.github.io/?https://github.com/shengfu-hou/JavaScript30/blob/master/03%20-%20CSS%20Variables/index.html)
 
 ## 摘要
-本篇要做的事情是Javascript 和 CSS3 去改變 CSS的值，範例是改變了內邊距(padding), 模糊度(blur)及顏色，並同時對標題得字進行改變。
 
-大致上的想法如下:
+   這個case要做的事情是透過input改變CSS的變數，這裡的CSS變數為`內邊距(padding)` `模糊度(blur)` `顏色`;
 
-1. 在css中定義變數，並把變數關連到頁面。
-2. 利用Javascript抓取改變的量(使用change監聽顏色改變及mouseover事件監聽range)，並更新CSS的變數值。
+   想法如下:
+
+   1.  監聽三個input,`input`時觸發事件`handleUpdate`，範例是用`change`，`mousemove`兩個事件完成，這裡可以用一個input代替
+    
+ ```
+    (DOM).forEach(input=>input.addEventListener("input",handleUpdate));
+ ```
+
+   2.  handleUpdate()內容為改變變數值為目前value,先 DOM `:root` 裡面的變數,然後改變屬性為觸發事件那個input對應的變數
+
+   其中`suffix`為 `this.dataset.sizing || ''` 
+
+   是CSS變數需要的單位px,不需要時為空
+
+ ```
+    document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
+ ```
+
 
 ## 重點提醒
 
@@ -19,9 +35,9 @@
 ```css
 \\宣告方式
 :root{
-	--base: #ffc600;
-    --blur: 10px;
-    --spacing: 10px;
+      --base: #ffc600;
+      --blur: 10px;
+      --spacing: 10px;
 }
 \\使用方式
 span.hl{
@@ -34,20 +50,3 @@ img{
 }
 ```
 
-3. filter:blur()濾鏡使用，常見的還有blur(模糊度)opacity(透明度)。
-4. NodeList vs Array:當使用`querySelectorAll('.controls input')`時會回傳一個NodeList, 可以使用`forEach` function，但是它不是一個Array，可以無法使用像是map, reduce等function。
-```
-<div class="controls">
-	<input >
-    <input >
-    <input >
-```
-
-5. `this.dataset`:會出現該選取項目中所有`data-`的項目及值。舉例來說，如果要選取`data-sizing`的值，可以使用`this.dataset.sizing`，在範例中，`data-sizing`存放的是`px`，所以在取到目標的值之後，還需要加上`px`值才可以運作，不過顏色沒有單位，所以也可以為空，避免報錯。
-
-```
-function updateData(e){
-    const suffix = this.dataset.sizing || ' ';
-    document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
-}
-```
