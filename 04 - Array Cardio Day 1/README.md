@@ -1,6 +1,6 @@
 # Array Cardio Day1
-
-## 摘要
+[Demo](http://htmlpreview.github.io/?https://github.com/shengfu-hou/JavaScript30/blob/master/04%20-%20Array%20Cardio%20Day%201/index.html)
+## 摘要 
 本篇主要介紹幾個JS array的使用方式。包含`filter()`，`map()`，`sort()`，`reduce()`。
 
 ## 內容
