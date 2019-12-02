@@ -1,9 +1,7 @@
 # Gallery
-
+[Demo](http://htmlpreview.github.io/?https://github.com/shengfu-hou/JavaScript30/blob/master/05%20-%20Flex%20Panel%20Gallery/index.html)
 ## 摘要
 本日重點主要是利用 `flex` 的特性及 `transition` 的動畫效果做出點擊後的效果呈現。
-可參考[flex.io](https://www.flex.io/)。
-
 
 ## 內容
 
